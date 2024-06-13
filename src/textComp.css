@@ -1,0 +1,11 @@
+.text-card {
+    margin-bottom: 20px;
+    height: 20vh;
+  }
+  
+  .custom-card {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  
