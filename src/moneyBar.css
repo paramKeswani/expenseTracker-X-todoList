@@ -1,4 +1,4 @@
-.progress-bar-container {
+.money-bar-container {
     width: 20%;
     height: 20px;
     background-color: #f0f0f0;
@@ -6,11 +6,12 @@
     overflow: hidden;
     position: fixed;
     top: 0;
-    left: 0;
+    left: 350px;
     margin: 20px;
+    
 }
 
-.progress-bar {
+.money-bar {
     height: 100%;
     line-height: 20px;
     color: #fff;
@@ -18,7 +19,7 @@
     transition: width 0.5s ease;
 }
 
-.progress-bar-container .toast {
+.money-bar-container .toast {
     display: none;
     position: absolute;
     top: 10px;

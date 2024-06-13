@@ -1,12 +1,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import './progressBar.css'; 
+import './moneyBar.css'; 
 
 import { stateAtom } from './atom' ;
 import { useRecoilState } from 'recoil';
 import {data} from './atom';
 
-export default function ProgressBar() {
+export default function MoneyBar() {
     const [val , setVal] = useRecoilState(stateAtom) ;
     const [value, setValue] = useState(0);
     const toast = useRef(null);
@@ -16,7 +16,7 @@ export default function ProgressBar() {
         let _val = value;
 
         interval.current = setInterval(() => {
-            _val +=data[val].happiness;
+            // _val +=data[val].happiness;
 
             // if (_val >= 100) {
             //     _val = 100;
@@ -56,10 +56,10 @@ export default function ProgressBar() {
     }, [val]);
 
     return (
-        <div className="progress-bar-container">
+        <div className="money-bar-container">
         
-            <div className="progress-bar" style={{ width: `${data[val].happiness}%`, backgroundColor: value >= 100 ? '#28a745' : '#007bff' }}>
-            <div> Happiness</div>
+            <div className="money-bar" style={{ width: `${data[val].money}%`, backgroundColor: value >= 100 ? '#28a745' : '#007bff' }}>
+                <div>Money</div>%
             </div>
             <div ref={toast} className="toast">
                 Process Completed
