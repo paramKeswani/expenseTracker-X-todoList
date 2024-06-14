@@ -3,6 +3,7 @@ import './card.css';
 import { stateAtom,isVisibleAtom } from './atom' ;
 import { useRecoilState } from 'recoil';
 import {data} from './atom'  ;
+import { IconBoxFill } from './iconBox';
  const Card = () => {
 
   const [val , setVal] = useRecoilState(stateAtom) ;
@@ -24,6 +25,9 @@ import {data} from './atom'  ;
   
   return (
     <div className="card w-100">
+    <div className='icon-container'>
+      <IconBoxFill height="1em" width="2em" fill="black"></IconBoxFill>
+    </div>
       <div className="card-body d-flex">
         <div className="info-section w-25">
           <p className="text-center"> {data[val].exp1} </p>

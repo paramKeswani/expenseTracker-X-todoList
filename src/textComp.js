@@ -3,7 +3,12 @@ import './textComp.css';
 import { stateAtom,isVisibleAtom } from './atom' ;
 import { useRecoilState } from 'recoil';
 
+
+import {data} from './atom'  
+
 const TextComponent = ({ text }) => {
+
+  const [val , setVal] = useRecoilState(stateAtom) ;
 
   const [isVisible, setIsVisible] = useRecoilState(isVisibleAtom); 
 
@@ -15,7 +20,7 @@ const TextComponent = ({ text }) => {
     return () => {
       clearTimeout(timeout); 
     };
-  }, []); 
+  }, [val]); 
 
   if (!isVisible) {
     return null;
@@ -24,7 +29,7 @@ const TextComponent = ({ text }) => {
   return (
     <div className="text-card">
       <div className="card-body">
-        <p className="text-center mb-0">{text}</p>
+        <p className="text-center mb-0">{data[val].desc}</p>
       </div>
     </div>
   );
