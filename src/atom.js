@@ -64,7 +64,7 @@ ans1:<> <p>Liabilities</p><p>(Let see how you work for money)</p></>,
 ans2: <><p>Assets</p><p>(Let see how your money works for you)</p></>,
 exp1 : <><p>Liabilities are debts you owe, like loans and credit card balances, that require future payments.</p></>,
 exp2 : <><p>Assets are valuable resources you own, like cash, investments, and property, that can generate income or be sold.</p></>  ,
-desc : <><p style={{color:"green"}}> 'Pursuing Wealth through hard Work and perseverance - path to fulfillment' </p></> ,
+desc : <><p style={{color:"lightgreen"}}> 'Pursuing Wealth through hard Work and perseverance - path to fulfillment' </p></> ,
 i1: 4,
 i2: 6,
 
@@ -106,7 +106,7 @@ i2: 6,
             ans2: <><p>Stocks  </p></>,
             exp1 : <><p>Fixed deposits are secure bank investments where you deposit money for a set period and earn guaranteed interest.</p></>,
             exp2 : <><p>Stocks are investments where you buy shares in a company, potentially earning profits or losses based on the company's performance.</p></>  ,
-            desc : <><p style={{color : "green"}}> "I will tell you how to become wealthy. Close the doors. Be fearful when others are greedy. Be greedy when others are fearful." — Warren Buffett   </p></> ,
+            desc : <><p style={{color : "lightgreen"}}> "I will tell you how to become wealthy. Close the doors. Be fearful when others are greedy. Be greedy when others are fearful." — Warren Buffett   </p></> ,
             i1: 7,
             i2: 8 
             
@@ -168,7 +168,7 @@ i2: 6,
                         exp1 : <><p></p></>,
                         exp2 : <><p></p></>  ,
                         desc : <><p><p style={{color:"red" }}>OOPs You have lost 50% of money </p></p></> ,
-                        i1: 0,
+                        i1: 6,
                         i2: 0 
                         
                         }
