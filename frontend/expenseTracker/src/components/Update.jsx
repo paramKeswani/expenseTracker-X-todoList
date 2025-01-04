@@ -23,7 +23,7 @@ function Update({id}) {
             
                 method: "PUT",
         body : JSON.stringify({
-            username:  "param" ,
+            // username:  "param" ,
 
             _id: id
         }) ,
@@ -143,7 +143,7 @@ useEffect(()=>{console.log(textA)},[textA])
 method: "PUT",
 body : JSON.stringify({
     val : count ,
-    username : "param",
+    // username : "param",
     month : month ,
     date : d , 
     year : year ,

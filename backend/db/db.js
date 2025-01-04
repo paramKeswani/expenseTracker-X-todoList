@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://2021paramkeswani:KSfkpF7P47SdrQxQ@cluster0.uakzys5.mongodb.net/' ,{
+mongoose.connect('mongodb+srv://2021paramkeswani:Nt9G5lkKaUK4AztK@finance.hy497.mongodb.net/',{
     
 });
 

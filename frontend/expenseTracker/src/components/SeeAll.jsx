@@ -40,7 +40,7 @@ function SeeAll() {
 
     </Container>
       </Container>
-      <Allcards className="" method_type={"POST"} route={"seeall"} username={"param"} />
+      <Allcards className="" method_type={"POST"} route={"seeall"}  />
     </div>
   )
 }

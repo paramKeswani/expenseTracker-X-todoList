@@ -18,7 +18,7 @@ function Input() {
 
         method: "POST",
         body : JSON.stringify({
-            username:  "param" ,
+           
 
             month: selectedMonth.toString()
         }) ,

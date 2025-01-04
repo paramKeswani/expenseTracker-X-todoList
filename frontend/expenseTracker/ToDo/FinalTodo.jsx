@@ -32,7 +32,7 @@ let mont = month[d.getMonth()];
       const response = await fetch("http://localhost:3001/user/todo", {
         method: "POST",
         body: JSON.stringify({
-          username: "param",
+          // username: "param",
           date: dat,
           month :mont ,
           time: tm,

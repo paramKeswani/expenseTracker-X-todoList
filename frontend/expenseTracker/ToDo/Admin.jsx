@@ -19,9 +19,9 @@ function Admin() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body :JSON.stringify({
-            username :"param" 
-        })
+        // body :JSON.stringify({
+        //     username :"param" 
+        // })
       });
 
       if (!response.ok) {

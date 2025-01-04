@@ -13,69 +13,73 @@ const storage = multer.memoryStorage();
 
 
 // User Routes
-router.post('/signup',async (req, res) => {
-    // Implement user signup logic
-    const username = req.body.username;
-    const password = req.body.password;
 
-    // console.log("hi")
+// -----------------------------------------> login sign up <-----------------------------------------------------
 
-    const u = await  User.findOne({
-        username : username  
+
+// router.post('/signup',async (req, res) => {
+//     // Implement user signup logic
+//     const username = req.body.username;
+//     const password = req.body.password;
+
+//     // console.log("hi")
+
+//     const u = await  User.findOne({
+//         username : username  
         
-     , password : password}) ;
+//      , password : password}) ;
 
-    //  console.log(u) ;
+//     //  console.log(u) ;
 
-     if(u )
-        {
-            // console.log("username already taken")
+//      if(u )
+//         {
+//             // console.log("username already taken")
             
-            res.send("username already taken");
-        }
+//             res.send("username already taken");
+//         }
 
-        else {
-            User.create({
+//         else {
+//             User.create({
                 
-                username, 
-                password
-            })
-        res.json({
-            message: "User created successfully"
-        })
-        }
+//                 username, 
+//                 password
+//             })
+//         res.json({
+//             message: "User created successfully"
+//         })
+//         }
 
         
 
-});
+// });
 
-router.post('/login',async (req, res) => {
-    // Implement user signup logic
-    const username = req.body.username;
-    const password = req.body.password;
-    const ans =  await User.findOne({
-        username : username  
+// router.post('/login',async (req, res) => {
+//     // Implement user signup logic
+//     const username = req.body.username;
+//     const password = req.body.password;
+//     const ans =  await User.findOne({
+//         username : username  
         
-     , password : password})
+//      , password : password})
 
 
-     if(ans)
-        {
+//      if(ans)
+//         {
 
-            res.json({
-                message: "User  is Present"
-            })
-        }
+//             res.json({
+//                 message: "User  is Present"
+//             })
+//         }
 
-        else {
-            res.send("First signup");
-        }
-});
+//         else {
+//             res.send("First signup");
+//         }
+// });
 
 router.post('/add', async (req, res) => {
     // Implement user signup logic
     const v  = req.body.val ;
-    const username = req.body.username;
+    // const username = req.body.username;
     const month  = req.body.month ;
     console.log(month) ;
     const date  = req.body.date ;
@@ -86,20 +90,20 @@ router.post('/add', async (req, res) => {
     const description = req.body.description ;
 
 
-    const ans =  await User.findOne({
-        username : username  
+    // const ans =  await User.findOne({
+    //     username : username  
         
-     })
+    //  })
 
 
-     if(ans)
+     if(true)
         {
             const incomee = "income" 
             if(v == "2")
                 {
                     Expense.create({
         
-                        username ,
+                        // username ,
                         month , 
                         date , 
                         year ,
@@ -115,7 +119,7 @@ router.post('/add', async (req, res) => {
             const exp = "expense"
             Expense.create({
 
-                username , 
+                // username , 
                 month ,
                 date , 
                 year ,
@@ -148,21 +152,22 @@ router.post('/display/:userName' ,async (req, res) => {
 
     // Implement listing all courses logic
      // Implement fetching all courses logic
-     const username  =  req.params.userName ; 
+    //  const username  =  req.params.userName ; 
      let month  =  req.body.month ; 
  
-     const ans =  await User.findOne({
-        username : username  
+    //  const ans =  await User.findOne({
+    //     username : username  
         
-     })
+    //  })
 
-     if(ans)
+     if(true)
         {
         
             
             let mont = month.toString();
-     const response = await Expense.find({username : username , month : mont}).sort({ $natural: -1 }).limit(5);
-
+    //  const response = await Expense.find({username : username , month : mont}).sort({ $natural: -1 }).limit(5);
+     const response = await Expense.find({month : mont}).sort({ $natural: -1 }).limit(5);
+       
     //  if (response.length === 0) {
     //     // Handle empty response
     //     res.json({
@@ -195,15 +200,16 @@ router.get('/display',async (req, res) => {
     // Implement listing all courses logic
      // Implement fetching all courses logic
 
-     const username  =  req.body.username ; 
-     const ans =  await User.findOne({
-        username : username  
+    //  const username  =  req.body.username ; 
+    //  const ans =  await User.findOne({
+    //     username : username  
         
-     })
+    //  })
 
-     if(ans)
+     if(true)
         {
-            const response = await Expense.find({username : username}).limit(5);
+            // const response = await Expense.find({username : username}).limit(5);
+            const response = await Expense.find().limit(5);
 
             res.json({
                 fiveExpenses: response
@@ -229,7 +235,7 @@ let inc = 0 ;
             inc = 0 ;
             const small_array = [];
             const records  =  await Expense.find({
-                username : "param",
+                // username : "param",
                 month : i
                
              }) ;
@@ -270,20 +276,21 @@ let inc = 0 ;
 
 router.post('/seeall',async (req, res)=>{
 
-const username  =  req.body.username ; 
+// const username  =  req.body.username ; 
      
 
-    const ans =  await User.findOne({
-       username : username  
+    // const ans =  await User.findOne({
+    //    username : username  
        
-    })
+    // })
 
-    if(ans)
+    if(true)
        {
        
            
            
-    const response = await Expense.find({username : username })
+    // const response = await Expense.find({username : username })
+    const response = await Expense.find()
 
    //  if (response.length === 0) {
    //     // Handle empty response
@@ -294,12 +301,12 @@ const username  =  req.body.username ;
    //     }
 
        
-       {
+       
            res.json({
                allExpenses: response
            })
 
-       }
+       
      
    
    }
@@ -318,20 +325,20 @@ const username  =  req.body.username ;
 
 router.post('/data',async (req, res)=>{
 
-    const username  =  req.body.username ; 
+    // const username  =  req.body.username ; 
          
     
-        const ans =  await User.findOne({
-           username : username  
+        // const ans =  await User.findOne({
+        //    username : username  
            
-        })
+        // })
     
-        if(ans)
+        if(true)
            {
            
                
                
-        const response = await Expense.find({username : username })
+        const response = await Expense.find()
     
        //  if (response.length === 0) {
        //     // Handle empty response
@@ -367,13 +374,13 @@ router.post('/calculate',async (req, res)=>{
 
     try{
 
-    const username  = req.body.username ;
+    // const username  = req.body.username ;
     const month = req.body.month ;
     let ex = 0 ;
     let inc = 0 ;
 
     const records  =  await Expense.find({
-        username : username ,
+        // username : username ,
         month : month
         
      }) ; 
@@ -413,13 +420,13 @@ router.post('/alltransac',async (req, res)=>{
 
     try{
 
-    const username  = req.body.username ;
+    // const username  = req.body.username ;
     
     let ex = 0 ;
     let inc = 0 ;
 
     const records  =  await Expense.find({
-        username : username 
+        // username : username 
     
         
      }) ; 
@@ -457,23 +464,23 @@ router.post('/alltransac',async (req, res)=>{
 router.put('/update',async(req,res)=>{
 
     try{
-        const username  = req.body.username ;
+        // const username  = req.body.username ;
         const id  = req.body.id ;
-console.log(username);
+// console.log(username);
 console.log(id);
-        const ans =  await User.findOne({
-            username : username  
+        // const ans =  await User.findOne({
+        //     username : username  
             
-         })
+        //  })
 
-         console.log(ans);
+        //  console.log(ans);
 
          if(ans.length !=0)
             {
 
                 
         const record =  await Expense.find({
-            username : username ,
+            // username : username ,
             _id : id
             
          }) ; 
@@ -516,7 +523,7 @@ console.log(id);
 router.put('/update1',async(req,res)=>{
 
     try{
-        const username  = req.body.username ;
+        // const username  = req.body.username ;
         const month  = req.body.month ;
     console.log(month) ;
     const date  = req.body.date ;
@@ -531,20 +538,20 @@ router.put('/update1',async(req,res)=>{
         
 console.log(username);
 console.log(id);
-        const ans =  await User.findOne({
-            username : username  
+        // const ans =  await User.findOne({
+        //     username : username  
 
             
-         })
+        //  })
 
-         console.log(ans);
+        //  console.log(ans);
 
-         if(ans.length !=0)
+         if(true)
             {
 
                 
         const record =  await Expense.updateOne({
-            username : username ,
+            // username : username ,
             _id : id
             
          },{$set:{"amount" :amount ,"month" : month ,"date" :date ,"year" : year ,"category":category ,"description" :description}}) ; 
@@ -626,7 +633,7 @@ console.log(id);
 router.post('/todo', async (req, res) => {
     // Implement user signup logic
     
-    const username = req.body.username;
+    // const username = req.body.username;
    
 
     const date  = req.body.date ;
@@ -639,18 +646,18 @@ router.post('/todo', async (req, res) => {
     
     
 
-    const ans =  await User.findOne({
-        username : username  
+    // const ans =  await User.findOne({
+    //     username : username  
         
-     })
+    //  })
 
 
-     if(ans)
+     if(true)
         {
             
                     Todo.create({
         
-                        username ,
+                        // username ,
                    
                         date , 
 
@@ -687,20 +694,22 @@ router.post('/todos' ,async (req, res) => {
 
     // Implement listing all courses logic
      // Implement fetching all courses logic
-     const username  =  req.body.username ; 
+    //  const username  =  req.body.username ; 
      const month  =  req.body.month ; 
  
-     const ans =  await User.findOne({
-        username : username  
+    //  const ans =  await User.findOne({
+    //     username : username  
         
-     })
+    //  })
 
-     if(ans)
+     if(true)
         {
         
             
             
-     const response = await Todo.find({username : username , month : month}).sort({ $natural: -1 }).limit(5);
+    //  const response = await Todo.find({username : username , month : month}).sort({ $natural: -1 }).limit(5);
+
+     const response = await Todo.find({month : month}).sort({ $natural: -1 }).limit(5);
 
     //  if (response.length === 0) {
     //     // Handle empty response
@@ -787,11 +796,11 @@ router.post("/alltodos",  async(req,res)=>{
 
     try{
 
-        const username  = req.body.username ;
+        // const username  = req.body.username ;
 
-        const ans  = User.findOne({username : username});
+        // const ans  = User.findOne({username : username});
         
-        if(ans)
+        if(true)
             {
                 const response =  await Todo.find({});
 

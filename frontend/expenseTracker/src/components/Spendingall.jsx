@@ -19,7 +19,7 @@ function Spendingall() {
       try {
         const response = await fetch("http://localhost:3001/user/alltransac", {
           method: "POST",
-          body: JSON.stringify({ username: "param" }),
+          // body: JSON.stringify({ username: "param" }),
           headers: { "Content-Type": 'application/json' }
         });
 

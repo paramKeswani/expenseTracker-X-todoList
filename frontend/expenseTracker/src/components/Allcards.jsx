@@ -17,7 +17,8 @@ function Allcards({route,method_type,username}) {
             
             const response = await fetch(`http://localhost:3001/user/${route}`, {
                 method: `${method_type}`,
-                body: JSON.stringify({ username:username }),
+                body: JSON.stringify(),
+                // body: JSON.stringify({ username:username }),
                 headers: { "Content-Type": 'application/json' }
             });
 

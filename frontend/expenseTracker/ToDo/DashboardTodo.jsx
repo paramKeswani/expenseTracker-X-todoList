@@ -15,7 +15,7 @@ function DashboardTodo() {
       const response = await fetch("http://localhost:3001/user/todos", {
         method: "POST",
         body: JSON.stringify({
-          username: "param",
+          // username: "param",
           month: currentMonth
         }),
         headers: { "Content-Type": 'application/json' }
@@ -168,7 +168,7 @@ function DashboardTodo() {
           </Container>
         </Container>
       </div>
-      <div>This is DashBoard Todo</div>
+    
     </div>
   );
 }

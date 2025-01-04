@@ -108,7 +108,7 @@ useEffect(()=>{console.log(textA)},[textA])
 method: "POST",
 body : JSON.stringify({
     val : count ,
-    username : "param",
+    // username : "param",
     month : month ,
     date : d , 
     year : year ,
